@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Seng Kang",
+    "id": 0,
+    "line": "SW",
+    "transitions": {
+      "exit": 2,
+      "NE": 2,
+      "SE": 2
+    }
+  },{
+    "name": "Cheng Lim",
+    "id": 1,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Farmway",
+    "id": 2,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Kupang",
+    "id": 3,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Thanggam",
+    "id": 4,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Fernvale",
+    "id": 5,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Layar",
+    "id": 6,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Tongkang",
+    "id": 7,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Renjong",
+    "id": 8,
+    "line": "SW",
+    "transitions": {
+      "exit": 2
+    }
+  }
+]

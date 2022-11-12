@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Tanah Merah",
+    "id": 0,
+    "line": "CG",
+    "transitions": {
+      "exit": 7,
+      "EW": 7
+    }
+  },{
+    "name": "Expo",
+    "id": 1,
+    "line": "CG",
+    "transitions": {
+      "exit": 5,
+      "DT": 13
+    }
+  },{
+    "name": "Changi Airport",
+    "id": 2,
+    "line": "CG",
+    "transitions": {
+      "exit": 20
+    }
+  }
+]

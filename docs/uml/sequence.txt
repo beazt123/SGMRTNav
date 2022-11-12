@@ -1,0 +1,41 @@
+@startuml
+
+User -> MRTNavAbility: /nav
+MRTNavAbility -> Lines: getLines
+Lines -> MRTNavAbility: Lines
+MRTNavAbility -> User: Select the starting Line
+User -> MRTNavAbility: Selected Line
+MRTNavAbility -> Stations: getStations
+Stations -> MRTNavAbility: Stations
+MRTNavAbility -> User: Select the starting Station
+User -> MRTNavAbility: Selected Station
+MRTNavAbility -> Lines: getLines
+Lines -> MRTNavAbility: Lines
+MRTNavAbility -> User: Select the ending Line
+User -> MRTNavAbility: Selected Line
+MRTNavAbility -> Stations: getStations
+Stations -> MRTNavAbility: Stations
+MRTNavAbility -> User: Select the ending Station
+User -> MRTNavAbility: Selected Station
+
+MRTNavAbility -> TrainRoutePlanner: TrainRoutePlanner.getRoute(start, end)
+TrainRoutePlanner -> Network: getPath(start, end)
+Network -> TrainRoutePlanner: List<Station> path
+TrainRoutePlanner -> TrainRoutePlanner: convertToInstructions(path)
+TrainRoutePlanner -> MRTNavAbility: navigation instructions
+MRTNavAbility -> User: navigation instructions
+
+
+@enduml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+
+
+NetworkBuilder -> NetworkBuilder: setConfigFilePath(filePath)
+NetworkBuilder -> Network: build()
+TrainRoutePlanner -> TrainRoutePlanner: setNetwork()
+TrainRoutePlanner -> TrainRoutePlanner: getRoute(startingStation, endingStation)
+TrainRoutePlanner -> TrainRoutePlanner: getInstructions()

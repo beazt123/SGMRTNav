@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "EXIT": 9,
+      "CCL": 9
+    }
+  }
+]

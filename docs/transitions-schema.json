@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "http://yourdomain.com/schemas/transitions.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "stations": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}:[1-9][0-9]*$"
+        }
+      },
+      "walking_time":  {
+        "type": "number",
+        "minimum": 1
+      }
+    },
+    "required": ["stations", "walking_time"],
+    "additionalProperties": false
+  }
+}

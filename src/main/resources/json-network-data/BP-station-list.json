@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Choa Chu Kang",
+    "id": 1,
+    "line": "BP",
+    "transitions": {
+      "exit": 2,
+      "NS": 2
+    }
+  },{
+    "name": "South View",
+    "id": 2,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Keat Hong",
+    "id": 3,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Teck Whye",
+    "id": 4,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Phoenix",
+    "id": 5,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Bukit Panjang",
+    "id": 6,
+    "line": "BP",
+    "transitions": {
+      "exit": 2,
+      "DT": 2
+    }
+  },{
+    "name": "Petir",
+    "id": 7,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Pending",
+    "id": 8,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Bangkit",
+    "id": 9,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Fajar",
+    "id": 10,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Segar",
+    "id": 11,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Jelapang",
+    "id": 12,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Senja",
+    "id": 13,
+    "line": "BP",
+    "transitions": {
+      "exit": 2
+    }
+  }
+]

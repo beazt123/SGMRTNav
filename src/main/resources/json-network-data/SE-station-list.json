@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Seng Kang",
+    "id": 0,
+    "line": "SE",
+    "transitions": {
+      "exit": 2,
+      "NE": 2,
+      "SW": 2
+    }
+  },{
+    "name": "Compassvale",
+    "id": 1,
+    "line": "SE",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Rumbia",
+    "id": 2,
+    "line": "SE",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Bakau",
+    "id": 3,
+    "line": "SE",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Kangkar",
+    "id": 4,
+    "line": "SE",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Ranggung",
+    "id": 5,
+    "line": "SE",
+    "transitions": {
+      "exit": 2
+    }
+  }
+]

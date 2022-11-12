@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Dhoby Ghaut",
+    "id": 1,
+    "line": "CC",
+    "transitions": {
+      "exit": 1,
+      "NS": 1,
+      "NE": 1
+    }
+  },{
+    "name": "Bras Basah",
+    "id": 2,
+    "line": "CC",
+    "transitions": {
+      "exit": 3
+    }
+  },{
+    "name": "Esplanade",
+    "id": 3,
+    "line": "CC",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Promenade",
+    "id": 4,
+    "line": "CC",
+    "transitions": {
+      "exit": 2,
+      "DT": 11
+    }
+  },{
+    "name": "Nicoll Highway",
+    "id": 5,
+    "line": "CC",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Stadium",
+    "id": 6,
+    "line": "CC",
+    "transitions": {
+      "exit": 1
+    }
+  },{
+    "name": "Mount Batten",
+    "id": 7,
+    "line": "CC",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Dakota",
+    "id": 8,
+    "line": "CC",
+    "transitions": {
+      "exit": 9
+    }
+  },{
+    "name": "Paya Lebar",
+    "id": 9,
+    "line": "CC",
+    "transitions": {
+      "exit": 3,
+      "EW": 3
+    }
+  },{
+    "name": "MacPherson",
+    "id": 10,
+    "line": "CC",
+    "transitions": {
+      "exit": 5,
+      "DT": 1
+    }
+  },{
+    "name": "Tai Seng",
+    "id": 11,
+    "line": "CC",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Bartley",
+    "id": 12,
+    "line": "CC",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Serangoon",
+    "id": 13,
+    "line": "CC",
+    "transitions": {
+      "exit": 6,
+      "NE": 12
+    }
+  },{
+    "name": "Lorong Chuan",
+    "id": 14,
+    "line": "CC",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Bishan",
+    "id": 15,
+    "line": "CC",
+    "transitions": {
+      "exit": 8,
+      "NS": 1
+    }
+  },{
+    "name": "Marymount",
+    "id": 16,
+    "line": "CC",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Caldecott",
+    "id": 17,
+    "line": "CC",
+    "transitions": {
+      "exit": 7,
+      "TE": 7
+    }
+  },{
+    "name": "Botanic Gardens",
+    "id": 19,
+    "line": "CC",
+    "transitions": {
+      "exit": 5,
+      "DT": 5
+    }
+  },{
+    "name": "Farrer Road",
+    "id": 20,
+    "line": "CC",
+    "transitions": {
+      "exit": 9
+    }
+  },{
+    "name": "Holland Village",
+    "id": 21,
+    "line": "CC",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Buona Vista",
+    "id": 22,
+    "line": "CC",
+    "transitions": {
+      "exit": 5,
+      "EW": 5
+    }
+  },{
+    "name": "One-North",
+    "id": 23,
+    "line": "CC",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Kent Ridge",
+    "id": 24,
+    "line": "CC",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Haw Par Villa",
+    "id": 25,
+    "line": "CC",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Pasir Panjang",
+    "id": 26,
+    "line": "CC",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Labrador Park",
+    "id": 27,
+    "line": "CC",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Telok Blangah",
+    "id": 28,
+    "line": "CC",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "HarbourFront",
+    "id": 29,
+    "line": "CC",
+    "transitions": {
+      "exit": 2,
+      "NE": 2
+    }
+  }
+]

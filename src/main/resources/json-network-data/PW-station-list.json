@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Punggol",
+    "id": 0,
+    "line": "PW",
+    "transitions": {
+      "exit": 2,
+      "PE": 2,
+      "NE": 2
+    }
+  },{
+    "name": "Sam Kee",
+    "id": 1,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Teck Lee",
+    "id": 2,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Punggol Point",
+    "id": 3,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Samudera",
+    "id": 4,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Nibong",
+    "id": 5,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Sumang",
+    "id": 6,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Soo Teck",
+    "id": 7,
+    "line": "PW",
+    "transitions": {
+      "exit": 2
+    }
+  }
+]

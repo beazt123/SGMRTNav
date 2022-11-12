@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Serangoon",
+    "id": 12,
+    "line": "CC",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },{
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  },
+]

@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Punggol",
+    "id": 17,
+    "line": "NE",
+    "transitions": {
+      "exit": 5,
+      "PE": 14,
+      "PW": 14
+    }
+  }, {
+    "name": "Seng Kang",
+    "id": 16,
+    "line": "NE",
+    "transitions": {
+      "exit": 5,
+      "SW": 14,
+      "SE": 14
+    }
+  }, {
+    "name": "Buangkok",
+    "id": 15,
+    "line": "NE",
+    "transitions": {
+      "exit": 9
+    }
+  }, {
+    "name": "Hougang",
+    "id": 14,
+    "line": "NE",
+    "transitions": {
+      "exit": 8
+    }
+  }, {
+    "name": "Kovan",
+    "id": 13,
+    "line": "NE",
+    "transitions": {
+      "exit": 8
+    }
+  }, {
+    "name": "Serangoon",
+    "id": 12,
+    "line": "NE",
+    "transitions": {
+      "exit": 6,
+      "CC": 16
+    }
+  }, {
+    "name": "Woodleigh",
+    "id": 11,
+    "line": "NE",
+    "transitions": {
+      "exit": 8
+    }
+  }, {
+    "name": "Potong Pasir",
+    "id": 10,
+    "line": "NE",
+    "transitions": {
+      "exit": 8
+    }
+  }, {
+    "name": "Boon Keng",
+    "id": 9,
+    "line": "NE",
+    "transitions": {
+      "exit": 8
+    }
+  }, {
+    "name": "Farrer Park",
+    "id": 8,
+    "line": "NE",
+    "transitions": {
+      "exit": 8
+    }
+  }, {
+    "name": "Little India",
+    "id": 7,
+    "line": "NE",
+    "transitions": {
+      "exit": 8,
+      "DT": 17
+    }
+  }, {
+    "name": "Dhoby Ghaut",
+    "id": 6,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9,
+      "NS": 9
+    }
+  }, {
+    "name": "Clarke Quay",
+    "id": 5,
+    "line": "NE",
+    "transitions": {
+      "exit": 4
+    }
+  }, {
+    "name": "Chinatown",
+    "id": 4,
+    "line": "NE",
+    "transitions": {
+      "exit": 2,
+      "CC": 1
+    }
+  }, {
+    "name": "Outram Park",
+    "id": 3,
+    "line": "NE",
+    "transitions": {
+      "exit": 12,
+      "EW": 6
+    }
+  }, {
+    "name": "Harbourfront",
+    "id": 1,
+    "line": "NE",
+    "transitions": {
+      "exit": 9,
+      "CC": 9
+    }
+  }
+]

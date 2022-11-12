@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Woodlands North",
+    "id": 1,
+    "line": "TE",
+    "transitions": {
+      "exit": 1
+    }
+  },{
+    "name": "Woodlands",
+    "id": 2,
+    "line": "TE",
+    "transitions": {
+      "exit": 4,
+      "NS": 17
+    }
+  },{
+    "name": "Woodlands South",
+    "id": 3,
+    "line": "TE",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Springleaf",
+    "id": 4,
+    "line": "TE",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Lentor",
+    "id": 5,
+    "line": "TE",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Mayflower",
+    "id": 6,
+    "line": "TE",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Bright Hill",
+    "id": 7,
+    "line": "TE",
+    "transitions": {
+      "exit": 9
+    }
+  },{
+    "name": "Upper Thompson",
+    "id": 8,
+    "line": "TE",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Caldecott",
+    "id": 9,
+    "line": "TE",
+    "transitions": {
+      "exit": 2,
+      "CC": 19
+    }
+  }
+]

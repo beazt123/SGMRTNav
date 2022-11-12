@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Promenade",
+    "id": 0,
+    "line": "CE",
+    "transitions": {
+      "exit": 2,
+      "DT": 7,
+      "CC": 9
+    }
+  },
+  {
+    "name": "Bayfront",
+    "id": 1,
+    "line": "CE",
+    "transitions": {
+      "exit": 3,
+      "DT": 3
+    }
+  },{
+    "name": "Marina Bay",
+    "id": 2,
+    "line": "CE",
+    "transitions": {
+      "exit": 1
+    }
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Jurong East",
+    "id": 1,
+    "line": "NS",
+    "transitions": {
+      "exit": 8,
+      "EW": 8
+    }
+  },{
+    "name": "Bukit Batok",
+    "id": 2,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Bukit Gombak",
+    "id": 3,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Choa Chu Kang",
+    "id": 4,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Yew Tee",
+    "id": 5,
+    "line": "NS",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Kranji",
+    "id": 7,
+    "line": "NS",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Marsiling",
+    "id": 8,
+    "line": "NS",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Woodlands",
+    "id": 9,
+    "line": "NS",
+    "transitions": {
+      "exit": 7,
+      "TE": 2
+    }
+  },{
+    "name": "Admiralty",
+    "id": 10,
+    "line": "NS",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Jurong East",
+    "id": 1,
+    "line": "NS",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Sembawang",
+    "id": 11,
+    "line": "NS",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Canberra",
+    "id": 12,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Yishun",
+    "id": 13,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Khatib",
+    "id": 14,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Yio Chu Kang",
+    "id": 15,
+    "line": "NS",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Ang Mo Kio",
+    "id": 16,
+    "line": "NS",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Bishan",
+    "id": 17,
+    "line": "NS",
+    "transitions": {
+      "exit": 9,
+      "CC": 22
+    }
+  },{
+    "name": "Braddell",
+    "id": 18,
+    "line": "NS",
+    "transitions": {
+      "exit": 10
+    }
+  },{
+    "name": "Toa Payoh",
+    "id": 19,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Novena",
+    "id": 20,
+    "line": "NS",
+    "transitions": {
+      "exit": 11
+    }
+  },{
+    "name": "Newton",
+    "id": 21,
+    "line": "NS",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Orchard",
+    "id": 22,
+    "line": "NS",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Somerset",
+    "id": 23,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Dhoby Ghaut",
+    "id": 24,
+    "line": "NS",
+    "transitions": {
+      "exit": 8,
+      "NE": 8
+    }
+  },{
+    "name": "City Hall",
+    "id": 25,
+    "line": "NS",
+    "transitions": {
+      "exit": 5,
+      "EW": 9
+    }
+  },{
+    "name": "Raffles Place",
+    "id": 26,
+    "line": "NS",
+    "transitions": {
+      "exit": 10,
+      "EW": 5
+    }
+  },{
+    "name": "Marina Bay",
+    "id": 27,
+    "line": "NS",
+    "transitions": {
+      "exit": 7,
+      "CC": 7
+    }
+  },{
+    "name": "Marina South Pier",
+    "id": 28,
+    "line": "NS",
+    "transitions": {
+      "exit": 6
+    }
+  }
+]

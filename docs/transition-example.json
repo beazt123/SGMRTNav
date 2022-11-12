@@ -1,0 +1,9 @@
+[
+  {
+    "stations": ["NE:12", "CC:13"],
+    "walking_time": 1
+  },{
+    "stations": ["NE:12", "CC:13"],
+    "walking_time": 1
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "name": "Bukit Panjang",
+    "id": 1,
+    "line": "DT",
+    "transitions": {
+      "exit": 9
+    }
+  },{
+    "name": "Cashew",
+    "id": 2,
+    "line": "DT",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Hillview",
+    "id": 3,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Beauty World",
+    "id": 5,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "King Albert Park",
+    "id": 6,
+    "line": "DT",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Sixth Avenue",
+    "id": 7,
+    "line": "DT",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Tan Kah Kee",
+    "id": 8,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Botanic Gardens",
+    "id": 9,
+    "line": "DT",
+    "transitions": {
+      "exit": 3,
+      "CC": 3
+    }
+  },{
+    "name": "Stevens",
+    "id": 10,
+    "line": "DT",
+    "transitions": {
+      "exit": 3
+    }
+  },{
+    "name": "Newton",
+    "id": 11,
+    "line": "DT",
+    "transitions": {
+      "exit": 5,
+      "NS": 8
+    }
+  },{
+    "name": "Little India",
+    "id": 12,
+    "line": "DT",
+    "transitions": {
+      "exit": 8,
+      "NE": 8
+    }
+  },{
+    "name": "Rochor",
+    "id": 13,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Bugis",
+    "id": 14,
+    "line": "DT",
+    "transitions": {
+      "exit": 2,
+      "EW": 7
+    }
+  },{
+    "name": "Promenade",
+    "id": 15,
+    "line": "DT",
+    "transitions": {
+      "exit": 7,
+      "CC": 7
+    }
+  },{
+    "name": "Bayfront",
+    "id": 16,
+    "line": "DT",
+    "transitions": {
+      "exit": 4,
+      "DT": 5
+    }
+  },{
+    "name": "Downtown",
+    "id": 17,
+    "line": "DT",
+    "transitions": {
+      "exit": 4
+    }
+  },{
+    "name": "Telok Ayer",
+    "id": 18,
+    "line": "DT",
+    "transitions": {
+      "exit": 4
+    }
+  },{
+    "name": "Chinatown",
+    "id": 19,
+    "line": "DT",
+    "transitions": {
+      "exit": 1,
+      "NE": 1
+    }
+  },{
+    "name": "Fort Canning",
+    "id": 20,
+    "line": "DT",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Bencoolen",
+    "id": 21,
+    "line": "DT",
+    "transitions": {
+      "exit": 2
+    }
+  },{
+    "name": "Jalan Besar",
+    "id": 22,
+    "line": "DT",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Bendemeer",
+    "id": 23,
+    "line": "DT",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "Geylang Bahru",
+    "id": 24,
+    "line": "DT",
+    "transitions": {
+      "exit": 6
+    }
+  },{
+    "name": "Mattar",
+    "id": 25,
+    "line": "DT",
+    "transitions": {
+      "exit": 7
+    }
+  },{
+    "name": "MacPherson",
+    "id": 26,
+    "line": "DT",
+    "transitions": {
+      "exit": 12,
+      "CC": 3
+    }
+  },{
+    "name": "Ubi",
+    "id": 27,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Kaki Bukit",
+    "id": 28,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Bedok North",
+    "id": 29,
+    "line": "DT",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Bedok Reservoir",
+    "id": 30,
+    "line": "DT",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Tampines West",
+    "id": 31,
+    "line": "DT",
+    "transitions": {
+      "exit": 8
+    }
+  },{
+    "name": "Tampines",
+    "id": 32,
+    "line": "DT",
+    "transitions": {
+      "exit": 5,
+      "EW": 5
+    }
+  },{
+    "name": "Tampines East",
+    "id": 33,
+    "line": "DT",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Upper Changi",
+    "id": 34,
+    "line": "DT",
+    "transitions": {
+      "exit": 5
+    }
+  },{
+    "name": "Expo",
+    "id": 35,
+    "line": "DT",
+    "transitions": {
+      "exit": 5,
+      "EW": 8
+    }
+  }
+]

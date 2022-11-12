@@ -1,0 +1,114 @@
+@startuml
+
+package sg.utils {
+	class InputProcessing {
+		+ {static} int levenshteinDistance(String s1, String s2)
+		+ {static} String levenshteinDistanceBestMatch(String s1, List<String> s2)
+	}
+}
+
+package sg.mrt_navigation {
+	package planner {
+		class TrainRoutePlanner {
+			- Network<Station, DefaultEdge> network
+			- ShortestPathAlgorithm algo
+			+ List<Station> getRoute(Station start, Station end)
+			+ {static} String convertToInstructions(List<Station> route)
+		}
+		class JSONNetworkBuilder {
+			+ Network<Station, DEFAULT_EDGE> build()
+			- void parseStationsList()
+			- JsonNode parseTransitionsList(URL transitionsURL)
+		}
+		class Route {
+			- List<Segment> journey
+			+ List<Line> getSummary()
+			- void splitByTrainLines()
+		}
+		class Segment {
+			- List<Station> journey
+			+ int getDirection()
+			+ int getNumberOfStops()
+		}
+	}
+	package domain {
+		class Stations {
+			- Map<Line, Map<StationCode, Station>> stations
+			+ Optional<Station> get(StationCode stationCode)
+			+ Optional<Station> get(int id, Line line)
+			+ Station getOrError(int id, Line line) throws NoSuchElementException
+			+ boolean checkIfExists(Station s)
+			+ List<Station> getStationsOfTheSameLine(Line line)
+		}
+		
+		class Station<<Comparable>> {
+			- StationCode stationCode
+			- String name
+			- Map<Line, int> transitions
+			+ compareTo(Station s)
+			+ StationCode getStationCode()
+			+ int transitTo(Line line, int direction)
+		}
+		
+		class StationCode<<Comparable>> {
+			- int id
+			- Line line
+			- {static} Map<int, StationCode> stationCodes
+			+ int compareTo(StationCode s) throws IllegalArgumentException
+			+ boolean equals(StationCode o)
+			+ StationCode getStationCode(int id, Line line)
+			+ int hashCode()
+		}
+
+		enum Line {
+			- int numDoors
+			- double averageTravelTimeBetweenStns
+			--
+			+ int getNumDoors()
+			+ {abstract} String toString()
+			..Enums..
+			+ EXIT(-1)
+			+ NS(25)
+			+ EW(25)
+			+ CG(25)
+			+ NE(25)
+			+ CC(13)
+			+ CE(13)
+			+ DT(13)
+			+ TE(21)
+			+ PW(4)
+			+ PE(4)
+			+ SE(4)
+			+ SW(4)
+			+ BP(4)
+		}
+	}
+	
+	
+	
+	
+	package network {
+		class Network<V, E> {
+			- Graph<V, E> graph
+			+ List<V> getPath(V start, V end, ShortestPathAlgorithm<V, E> algo)
+			+ void addEdge(V vertice1, V vertice2, double weight)
+			+ void addVertex(V vertex)
+		}
+		interface NetworkBuilder<V, E> {
+			+ Network<V, E> build()
+		}
+	}
+}
+
+Network "1" -- "*" NetworkBuilder
+TrainRoutePlanner -- Station
+Route *-- Segment
+Station o-- StationCode
+StationCode -- Stations
+StationCode "1..*" -- "1" Line
+TrainRoutePlanner o-- Network
+Station o-- Line
+Station "Flyweights" -- Stations
+JSONNetworkBuilder --|> NetworkBuilder
+JSONNetworkBuilder -- Station
+@enduml

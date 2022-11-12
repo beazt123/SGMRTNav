@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "http://yourdomain.com/schemas/station.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "id":  {
+        "type": "integer",
+        "minimum": 0
+      },
+      "line": { "type": "string" },
+      "transitions": {
+        "type": "array",
+        "items": {
+          "patternProperties": {
+            "^([A-Z]{2}|EXIT)$": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "properties": {
+            "exit": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+      "additionalProperties": false
+      }
+    },
+    "required": ["name", "id", "line", "transitions"],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "stations": ["PE:0", "NE:17"],
+    "walking_time": 1
+  },{
+    "stations": ["PW:0", "NE:17"],
+    "walking_time": 1
+  },{
+    "stations": ["SE:0", "NE:16"],
+    "walking_time": 1
+  },{
+    "stations": ["SW:0", "NE:16"],
+    "walking_time": 1
+  },{
+    "stations": ["PE:0", "PW:0"],
+    "walking_time": 0
+  },{
+    "stations": ["SE:0", "SW:0"],
+    "walking_time": 0
+  },{
+    "stations": ["SE:0", "SE:5"],
+    "walking_time": 2
+  },{
+    "stations": ["SW:0", "SW:8"],
+    "walking_time": 2
+  },{
+    "stations": ["PW:0", "PW:7"],
+    "walking_time": 2
+  },{
+    "stations": ["PE:0", "PE:7"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:12", "CC:13"],
+    "walking_time": 5
+  },{
+    "stations": ["NS:17", "CC:15"],
+    "walking_time": 2
+  },{
+    "stations": ["TE:9", "CC:17"],
+    "walking_time": 2
+  },{
+    "stations": ["NS:9", "TE:2"],
+    "walking_time": 2
+  },{
+    "stations": ["BP:6", "TE:1"],
+    "walking_time": 3
+  },{
+    "stations": ["NS:21", "DT:11"],
+    "walking_time": 3
+  },{
+    "stations": ["NS:4", "BP:1"],
+    "walking_time": 2
+  },{
+    "stations": ["NS:1", "EW:24"],
+    "walking_time": 0.5
+  },{
+    "stations": ["CC:22", "EW:21"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:1", "CC:29"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:3", "NS:16"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:4", "DT:19"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:6", "NS:24"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:6", "CC:1"],
+    "walking_time": 2
+  },{
+    "stations": ["CC:1", "NS:24"],
+    "walking_time": 2
+  },{
+    "stations": ["NE:7", "DT:12"],
+    "walking_time": 2
+  },{
+    "stations": ["NS:25", "EW:13"],
+    "walking_time": 2
+  },{
+    "stations": ["NS:26", "EW:14"],
+    "walking_time": 2
+  },{
+    "stations": ["NS:27", "CE:2"],
+    "walking_time": 2
+  },{
+    "stations": ["DT:16", "CE:1"],
+    "walking_time": 2
+  },{
+    "stations": ["DT:15", "CC:4"],
+    "walking_time": 2
+  },{
+    "stations": ["DT:14", "EW:12"],
+    "walking_time": 2
+  },{
+    "stations": ["DT:26", "CC:10"],
+    "walking_time": 2
+  },{
+    "stations": ["EW:8", "CC:9"],
+    "walking_time": 2
+  },{
+    "stations": ["EW:4", "CG:0"],
+    "walking_time": 0
+  },{
+    "stations": ["EW:2", "DT:32"],
+    "walking_time": 7
+  },{
+    "stations": ["CG:1", "DT:35"],
+    "walking_time": 7
+  }
+]
