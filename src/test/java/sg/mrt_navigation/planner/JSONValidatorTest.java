@@ -25,7 +25,7 @@ public class JSONValidatorTest {
     public void testTransitions() throws IOException, URISyntaxException {
         URI transitionsSchemaURI = this.getClass().getResource("/transitions-schema.json").toURI();
         URL transitionsExampleURI = this.getClass().getResource("/transitions-example.json");
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         JsonSchema schema = factory.getSchema(transitionsSchemaURI);
         schema.initializeValidators();
 
@@ -37,7 +37,7 @@ public class JSONValidatorTest {
     public void testStationsList() throws IOException, URISyntaxException {
         URI transitionsSchemaURI = this.getClass().getResource("/station-list-schema.json").toURI();
         URL transitionsExampleURI = this.getClass().getResource("/station-list-example.json");
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         JsonSchema schema = factory.getSchema(transitionsSchemaURI);
         schema.initializeValidators();
 

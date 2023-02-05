@@ -19,10 +19,9 @@ public class JSONValidator {
     private final JsonSchema schema;
 
     public JSONValidator(URI pathToSchema) {
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         schema = factory.getSchema(pathToSchema);
         schema.initializeValidators();
-
     }
 
     public static JsonNode parse(String jsonStr) {
@@ -36,9 +35,9 @@ public class JSONValidator {
         return jsonObj;
     }
 
-    public boolean validateStationList(JsonNode jsonObj) {
+    public boolean isValidJson(JsonNode jsonObj)  {
         Set<ValidationMessage> errors = schema.validate(jsonObj);
-
+//        System.out.println(errors);
         return errors.isEmpty();
     }
 
