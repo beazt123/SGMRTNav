@@ -104,3 +104,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# AWS serverless configuration file
+**/serverless.yml
