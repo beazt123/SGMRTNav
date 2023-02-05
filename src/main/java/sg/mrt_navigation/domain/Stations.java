@@ -16,7 +16,18 @@ public class Stations {
     public static Station create(int id,
                                 Line line,
                                 String name,
-                                Map<Line, Integer> transitions) {
+                                Map<Line, List<Integer>> transitions) {
+        /*
+        does not return the original station you intend to create if there is already a flyweighted Station with the same id & line
+         */
+        return create(id, line, name, transitions, null);
+    }
+
+    public static Station create(int id,
+                                Line line,
+                                String name,
+                                Map<Line, List<Integer>> transitions,
+                                Map<String, List<Integer>> placesOfInterest) {
         /*
         does not return the original station you intend to create if there is already a flyweighted Station with the same id & line
          */
@@ -25,7 +36,7 @@ public class Stations {
         if (existingStations.containsKey(stationCode)) {
             return existingStations.get(stationCode);
         } else {
-            Station instance = new Station(id, line, name, transitions);
+            Station instance = new Station(id, line, name, transitions, placesOfInterest);
             existingStations.put(stationCode, instance);
             return instance;
         }
@@ -57,5 +68,12 @@ public class Stations {
     public static List<Station> getAllStationsFromLine(Line l) {
         ImmutableList<Station> selectedStations = ImmutableList.copyOf(stations.get(l).values());
         return selectedStations;
+    }
+
+    public static List<Station> getAllStations() {
+        List<Station> ls = new ArrayList<>();
+        for (Line l : stations.keySet())
+            ls.addAll(stations.get(l).values());
+        return ImmutableList.copyOf(ls);
     }
 }
