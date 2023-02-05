@@ -1,11 +1,13 @@
 plugins {
     id 'java'
+    id 'java-library'
 }
 
 group 'sg'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -20,4 +22,39 @@ dependencies {
     compile group: "com.networknt", name: "json-schema-validator", version: "1.0.73"
     compile group: "com.google.guava", name:"guava", version:"31.1-jre"
     compile group: 'me.xdrop', name: 'fuzzywuzzy', version: '1.4.0'
+    compile group: "org.slf4j", name: "slf4j-api", version: "2.0.3"
+    compile group: "org.slf4j", name: "slf4j-simple", version: "2.0.3"
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile group: 'org.mapdb', name: 'mapdb', version: '3.0.8'
+
+    compile group:'com.amazonaws', name:'aws-lambda-java-core', version: '1.2.1'
+    compile group:'com.amazonaws', name:'aws-lambda-java-events', version: '3.11.0'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-lambda', version: '1.12.400'
+
+    compile group: 'com.google.code.gson', name:'gson', version:'2.10'
+    api group:'com.fasterxml.jackson.core', name:'jackson-core', version: '2.11.0'
+    api group:'com.fasterxml.jackson.core', name:'jackson-databind', version: '2.11.0'
+    api group:'com.fasterxml.jackson.core', name:'jackson-annotations', version: '2.11.0'
+
+
 }
+
+// Task for building the zip file for upload
+task buildZip(type: Zip) {
+    // Using the Zip API from gradle to build a zip file of all the dependencies
+    //
+    // The path to this zip file can be set in the serverless.yml file for the
+    // package/artifact setting for deployment to the S3 bucket
+    //
+    // Link: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html
+
+    // set the base name of the zip file
+    archiveBaseName = "buddy"
+    from compileJava
+    from processResources
+    into('lib') {
+        from configurations.runtimeClasspath
+    }
+}
+
+build.dependsOn buildZip
