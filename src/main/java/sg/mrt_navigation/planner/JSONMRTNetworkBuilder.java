@@ -1,6 +1,7 @@
 package sg.mrt_navigation.planner;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultUndirectedWeightedGraph;
 import sg.mrt_navigation.domain.Line;
@@ -64,8 +65,8 @@ public class JSONMRTNetworkBuilder implements NetworkBuilder<Station, DefaultEdg
 
     private void parseFileAndCollectStations(File path) throws IOException {
         JsonNode jsonObj = parseFileIntoJson(path);
-        if (!stationsListJSONvalidator.validateStationList(jsonObj)) {
-            throw new IllegalStateException("JSON data could have been outdated");
+        if (!stationsListJSONvalidator.isValidJson(jsonObj)) {
+            throw new IllegalStateException("JSON data could have been outdated: " + path.toString());
         }
         // actually making it into part of the network
         for (JsonNode station : jsonObj) {
@@ -78,14 +79,30 @@ public class JSONMRTNetworkBuilder implements NetworkBuilder<Station, DefaultEdg
         int stationId = station.get("id").asInt();
         Line stationLine = Line.valueOf(station.get("line").asText());
 
+
+        Map<Line, List<Integer>> transitionsMap = new HashMap<>();
+        Map<String, List<Integer>> placesOfInterest = new HashMap<>();
         JsonNode transitions = station.get("transitions");
-        Map<Line, Integer> transitionsMap = new HashMap<>();
-        for (Iterator<Map.Entry<String, JsonNode>> it = transitions.fields(); it.hasNext(); ) {
-            Map.Entry<String, JsonNode> entry = it.next();
-            String lineCode = entry.getKey();
-            transitionsMap.put(Line.valueOf(lineCode.toUpperCase()), entry.getValue().asInt());
+        if (transitions != null) {
+            for (int i = 0; i < transitions.size(); i++) {
+                JsonNode transition = transitions.get(i);
+                String to = transition.get("to").asText();
+                List<Integer> exits = new ObjectMapper().convertValue(transition.get("exits"), ArrayList.class);
+
+                try {
+                    Line l = Line.valueOf(to.toUpperCase());
+                    transitionsMap.put(l, exits);
+                } catch (IllegalArgumentException e) {
+                    placesOfInterest.put(to, exits);
+                }
+            }
         }
-        Stations.create(stationId, stationLine, stationName, transitionsMap);
+
+        JsonNode exits = station.get("exits");
+        List<Integer> e = new ObjectMapper().convertValue(exits, ArrayList.class);
+        transitionsMap.put(Line.EXIT, e);
+
+        Stations.create(stationId, stationLine, stationName, transitionsMap, placesOfInterest);
     }
 
     private static JsonNode parseFileIntoJson(File path) throws IOException {
@@ -103,7 +120,7 @@ public class JSONMRTNetworkBuilder implements NetworkBuilder<Station, DefaultEdg
             e.printStackTrace();
         }
         JsonNode jsonObj = JSONValidator.parse(jsonData);
-        if (!transitionsJSONvalidator.validateStationList(jsonObj)) {
+        if (!transitionsJSONvalidator.isValidJson(jsonObj)) {
             throw new IllegalStateException("Transition JSON data could have been outdated");
         } else {
             return jsonObj;
