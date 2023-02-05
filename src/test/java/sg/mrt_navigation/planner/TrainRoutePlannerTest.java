@@ -12,17 +12,23 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class TrainRoutePlannerTest {
+
+    @Test
+    public void inspectAllStations() {
+        JSONMRTNetworkBuilder b = new JSONMRTNetworkBuilder();
+        Network<Station, DefaultEdge> network = b.build();
+        Stations.getAllStations().stream().forEach(System.out::println);
+    }
+
     @Test
     public void findShortTestPathSameLine() {
         JSONMRTNetworkBuilder b = new JSONMRTNetworkBuilder();
         Network<Station, DefaultEdge> network = b.build();
         TrainRoutePlanner planner = new TrainRoutePlanner(network);
-        Station start = Stations.getOrError(17, Line.NE);
-        Station end = Stations.getOrError(7, Line.NE);
-//        System.out.println(start);
-//        System.out.println(end);
+        Station start = Stations.getOrError(2, Line.CE);
+        Station end = Stations.getOrError(16, Line.NE);
         List<Station> path = planner.getRoute(start, end);
-//        System.out.println(path);
+        path.stream().forEach(System.out::println);
     }
 
     @Test
@@ -43,12 +49,13 @@ public class TrainRoutePlannerTest {
         JSONMRTNetworkBuilder b = new JSONMRTNetworkBuilder();
         Network<Station, DefaultEdge> network = b.build();
         TrainRoutePlanner planner = new TrainRoutePlanner(network);
-        Station start = Stations.getOrError(1, Line.TE);
-        Station end = Stations.getOrError(7, Line.PE);
+        Station start = Stations.getOrError(2, Line.CE);
+        Station end = Stations.getOrError(16, Line.NE);
         System.out.println("Start: " + start);
         System.out.println("End: " + end);
         List<Station> path = planner.getRoute(start, end);
-        path.stream().forEach(stn -> System.out.println(stn));
+        TrainRoute tr = new TrainRoute(path);
+        tr.getSegments().stream().forEach(stn -> System.out.println(stn));
     }
     @Test
     public void findShortTestPathDiffLRTLines() {
@@ -60,7 +67,7 @@ public class TrainRoutePlannerTest {
         System.out.println("Start: " + start);
         System.out.println("End: " + end);
         List<Station> path = planner.getRoute(start, end);
-        path.stream().forEach(stn -> System.out.println(stn));
+        new TrainRoute(path).getSegments().stream().forEach(stn -> System.out.println(stn));
     }
 
     @Test
@@ -85,6 +92,9 @@ public class TrainRoutePlannerTest {
         trainRoutePlanner.getRoute(start, end)
                 .stream()
                 .forEach(System.out::println);
-        System.out.println(TrainRoutePlanner.splitIntoSegmentsByTrainLine(trainRoutePlanner.getRoute(start, end)));
+//        System.out.println(TrainRoutePlanner.splitIntoSegmentsByTrainLine(trainRoutePlanner.getRoute(start, end)));
+        trainRoutePlanner.plan(start, end)
+                .stream()
+                .forEach(System.out::println);
     }
 }
