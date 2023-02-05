@@ -1,28 +1,67 @@
 [
-  {
-    "name": "Promenade",
-    "id": 0,
-    "line": "CE",
-    "transitions": {
-      "exit": 2,
-      "DT": 7,
-      "CC": 9
+    {
+        "name": "Promenade",
+        "id": 0,
+        "line": "CE",
+        "exits": [
+            2, 11
+        ],
+        "transitions": [
+            {
+                "to": "DT",
+                "exits": [
+                    7
+                ]
+            },
+            {
+                "to": "CC",
+                "exits": [
+                    9
+                ]
+            },
+            {
+                "to": "Towards Harbourfront",
+                "exits": [
+                    9
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Bayfront",
+        "id": 1,
+        "line": "CE",
+        "exits": [
+            3, 12
+        ],
+        "transitions": [
+            {
+                "to": "DT",
+                "exits": [
+                    3, 12
+                ]
+            }, {
+                "to": "Marina Bay Sands",
+                "exits": [
+                    12
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Marina Bay",
+        "id": 2,
+        "line": "CE",
+        "exits": [
+            1, 12
+        ],
+        "transitions": [
+            {
+                "to": "NS",
+                "exits": [
+                    1, 12
+                ]
+            }
+        ]
     }
-  },
-  {
-    "name": "Bayfront",
-    "id": 1,
-    "line": "CE",
-    "transitions": {
-      "exit": 3,
-      "DT": 3
-    }
-  },{
-    "name": "Marina Bay",
-    "id": 2,
-    "line": "CE",
-    "transitions": {
-      "exit": 1
-    }
-  }
 ]

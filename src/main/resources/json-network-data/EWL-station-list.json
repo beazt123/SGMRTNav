@@ -1,241 +1,332 @@
 [
-  {
-    "name": "Pasir Ris",
-    "id": 1,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
+    {
+        "name": "Pasir Ris",
+        "id": 1,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ]
+    },
+    {
+        "name": "Tampines",
+        "id": 2,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ]
+    },
+    {
+        "name": "Simei",
+        "id": 3,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ]
+    },
+    {
+        "name": "Tanah Merah",
+        "id": 4,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ],
+        "transitions": [
+            {
+                "to": "CG",
+                "exits": [
+                    7, 18
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Bedok",
+        "id": 5,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ]
+    },
+    {
+        "name": "Kembangan",
+        "id": 6,
+        "line": "EW",
+        "exits": [
+            12, 22
+        ]
+    },
+    {
+        "name": "Eunos",
+        "id": 7,
+        "line": "EW",
+        "exits": [
+            6, 17
+        ]
+    },
+    {
+        "name": "Paya Lebar",
+        "id": 8,
+        "line": "EW",
+        "exits": [
+            13, 18
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    1
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Aljunied",
+        "id": 9,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ]
+    },
+    {
+        "name": "Kallang",
+        "id": 10,
+        "line": "EW",
+        "exits": [
+            7, 18
+        ]
+    },
+    {
+        "name": "Lavender",
+        "id": 11,
+        "line": "EW",
+        "exits": [
+            8, 15
+        ]
+    },
+    {
+        "name": "Bugis",
+        "id": 12,
+        "line": "EW",
+        "exits": [
+            7, 16
+        ]
+    },
+    {
+        "name": "City Hall",
+        "id": 13,
+        "line": "EW",
+        "exits": [
+            9, 12
+        ],
+        "transitions": [
+            {
+                "to": "NS",
+                "exits": [
+                    6, 16
+                ]
+            },{
+                "to": "Towards Pasir ris",
+                "exits": [
+                    6, 16
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Raffles Place",
+        "id": 14,
+        "line": "EW",
+        "exits": [
+            10, 15
+        ],
+        "transitions": [
+            {
+                "to": "NS",
+                "exits": [
+                    5, 20
+                ]
+            },{
+                "to": "Towards Pasir ris",
+                "exits": [
+                    5, 20
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Tanjong Pagar",
+        "id": 15,
+        "line": "EW",
+        "exits": [
+            6, 21
+        ]
+    },
+    {
+        "name": "Outram Park",
+        "id": 16,
+        "line": "EW",
+        "exits": [
+            8, 17
+        ],
+        "transitions": [
+            {
+                "to": "NE",
+                "exits": [
+                    12, 20
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Tiong Baru",
+        "id": 17,
+        "line": "EW",
+        "exits": [
+            8, 15
+        ]
+    },
+    {
+        "name": "Redhill",
+        "id": 18,
+        "line": "EW",
+        "exits": [
+            11
+        ]
+    },
+    {
+        "name": "Queenstown",
+        "id": 19,
+        "line": "EW",
+        "exits": [
+            11
+        ]
+    },
+    {
+        "name": "Commonwealth",
+        "id": 20,
+        "line": "EW",
+        "exits": [
+            14
+        ]
+    },
+    {
+        "name": "Buona Vista",
+        "id": 21,
+        "line": "EW",
+        "exits": [
+            11
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    20
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dover",
+        "id": 22,
+        "line": "EW",
+        "exits": [
+            9, 19
+        ]
+    },
+    {
+        "name": "Clementi",
+        "id": 23,
+        "line": "EW",
+        "exits": [
+            14
+        ]
+    },
+    {
+        "name": "Jurong East",
+        "id": 24,
+        "line": "EW",
+        "exits": [
+            7, 17
+        ],
+        "transitions": [
+            {
+                "to": "NS",
+                "exits": [
+                    7, 17
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Chinese Garden",
+        "id": 25,
+        "line": "EW",
+        "exits": [
+            6, 17
+        ]
+    },
+    {
+        "name": "Lakeside",
+        "id": 26,
+        "line": "EW",
+        "exits": [
+            6, 17
+        ]
+    },
+    {
+        "name": "Boon Lay",
+        "id": 27,
+        "line": "EW",
+        "exits": [
+            5, 16
+        ]
+    },
+    {
+        "name": "Pioneer",
+        "id": 28,
+        "line": "EW",
+        "exits": [
+            9, 17
+        ]
+    },
+    {
+        "name": "Joo Koon",
+        "id": 29,
+        "line": "EW",
+        "exits": [
+            8, 16
+        ]
+    },
+    {
+        "name": "Gul Circle",
+        "id": 30,
+        "line": "EW",
+        "exits": [
+            13, 20
+        ]
+    },
+    {
+        "name": "Tuas Cresent",
+        "id": 31,
+        "line": "EW",
+        "exits": [
+            7, 11, 22
+        ]
+    },
+    {
+        "name": "Tuas West Road",
+        "id": 32,
+        "line": "EW",
+        "exits": [
+            7, 11, 21
+        ]
+    },
+    {
+        "name": "Tuas Link",
+        "id": 33,
+        "line": "EW",
+        "exits": [
+            1, 8
+        ]
     }
-  },{
-    "name": "Tampines",
-    "id": 2,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Simei",
-    "id": 3,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Tanah Merah",
-    "id": 4,
-    "line": "EW",
-    "transitions": {
-      "exit": 7,
-      "CG": 7
-    }
-  },{
-    "name": "Bedok",
-    "id": 5,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Kembangan",
-    "id": 6,
-    "line": "EW",
-    "transitions": {
-      "exit": 12
-    }
-  },{
-    "name": "Eunos",
-    "id": 7,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Paya Lebar",
-    "id": 8,
-    "line": "EW",
-    "transitions": {
-      "exit": 13,
-      "CC": 1
-    }
-  },{
-    "name": "Aljunied",
-    "id": 9,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Kallang",
-    "id": 10,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Lavender",
-    "id": 11,
-    "line": "EW",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Bugis",
-    "id": 12,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "City Hall",
-    "id": 13,
-    "line": "EW",
-    "transitions": {
-      "exit": 9,
-      "NS": 6
-    }
-  },{
-    "name": "Raffles Place",
-    "id": 14,
-    "line": "EW",
-    "transitions": {
-      "exit": 10,
-      "NS": 5
-    }
-  },{
-    "name": "Tanjong Pagar",
-    "id": 15,
-    "line": "EW",
-    "transitions": {
-      "exit": 6
-    }
-  },{
-    "name": "Outram Park",
-    "id": 16,
-    "line": "EW",
-    "transitions": {
-      "exit": 8,
-      "NE": 12
-    }
-  },{
-    "name": "Tiong Baru",
-    "id": 17,
-    "line": "EW",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Redhill",
-    "id": 18,
-    "line": "EW",
-    "transitions": {
-      "exit": 11
-    }
-  },{
-    "name": "Queenstown",
-    "id": 19,
-    "line": "EW",
-    "transitions": {
-      "exit": 11
-    }
-  },{
-    "name": "Commonwealth",
-    "id": 20,
-    "line": "EW",
-    "transitions": {
-      "exit": 14
-    }
-  },{
-    "name": "Buona Vista",
-    "id": 21,
-    "line": "EW",
-    "transitions": {
-      "exit": 11,
-      "CC": 20
-    }
-  },{
-    "name": "Dover",
-    "id": 22,
-    "line": "EW",
-    "transitions": {
-      "exit": 9
-    }
-  },{
-    "name": "Clementi",
-    "id": 23,
-    "line": "EW",
-    "transitions": {
-      "exit": 14
-    }
-  },{
-    "name": "Jurong East",
-    "id": 24,
-    "line": "EW",
-    "transitions": {
-      "exit": 7,
-      "NS": 7
-    }
-  },{
-    "name": "Chinese Garden",
-    "id": 25,
-    "line": "EW",
-    "transitions": {
-      "exit": 6
-    }
-  },{
-    "name": "Lakeside",
-    "id": 26,
-    "line": "EW",
-    "transitions": {
-      "exit": 6
-    }
-  },{
-    "name": "Boon Lay",
-    "id": 27,
-    "line": "EW",
-    "transitions": {
-      "exit": 5
-    }
-  },{
-    "name": "Pioneer",
-    "id": 28,
-    "line": "EW",
-    "transitions": {
-      "exit": 9
-    }
-  },{
-    "name": "Joo Koon",
-    "id": 29,
-    "line": "EW",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Gul Circle",
-    "id": 30,
-    "line": "EW",
-    "transitions": {
-      "exit": 13
-    }
-  },{
-    "name": "Tuas Cresent",
-    "id": 31,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Tuas West Road",
-    "id": 32,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  },{
-    "name": "Tuas Link",
-    "id": 33,
-    "line": "EW",
-    "transitions": {
-      "exit": 7
-    }
-  }
 ]

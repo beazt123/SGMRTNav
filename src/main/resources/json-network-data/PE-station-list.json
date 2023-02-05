@@ -1,61 +1,80 @@
 [
-  {
-    "name": "Punggol",
-    "id": 0,
-    "line": "PE",
-    "transitions": {
-      "exit": 2,
-      "PW": 2,
-      "NE": 2
+    {
+        "name": "Punggol",
+        "id": 0,
+        "line": "PE",
+        "exits": [
+            2
+        ],
+        "transitions": [
+            {
+                "to": "PW",
+                "exits": [
+                    2
+                ]
+            },
+            {
+                "to": "NE",
+                "exits": [
+                    2
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cove",
+        "id": 1,
+        "line": "PE",
+        "exits": [
+            2
+        ]
+    },
+    {
+        "name": "Meridian",
+        "id": 2,
+        "line": "PE",
+        "exits": [
+            2
+        ]
+    },
+    {
+        "name": "Coral Edge",
+        "id": 3,
+        "line": "PE",
+        "exits": [
+            2
+        ]
+    },
+    {
+        "name": "Riviera",
+        "id": 4,
+        "line": "PE",
+        "exits": [
+            2
+        ]
+    },
+    {
+        "name": "Kadaloor",
+        "id": 5,
+        "line": "PE",
+        "exits": [
+            2
+        ]
+    },
+    {
+        "name": "Oasis",
+        "id": 6,
+        "line": "PE",
+        "exits": [
+            2
+        ]
+    },
+    {
+        "name": "Damai",
+        "id": 7,
+        "line": "PE",
+        "exits": [
+            2
+        ]
     }
-  },{
-    "name": "Cove",
-    "id": 1,
-    "line": "PE",
-    "transitions": {
-      "exit": 2
-    }
-  },{
-    "name": "Meridian",
-    "id": 2,
-    "line": "PE",
-    "transitions": {
-      "exit": 2
-    }
-  },{
-    "name": "Coral Edge",
-    "id": 3,
-    "line": "PE",
-    "transitions": {
-      "exit": 2
-    }
-  },{
-    "name": "Riviera",
-    "id": 4,
-    "line": "PE",
-    "transitions": {
-      "exit": 2
-    }
-  },{
-    "name": "Kadaloor",
-    "id": 5,
-    "line": "PE",
-    "transitions": {
-      "exit": 2
-    }
-  },{
-    "name": "Oasis",
-    "id": 6,
-    "line": "PE",
-    "transitions": {
-      "exit": 2
-    }
-  },{
-    "name": "Damai",
-    "id": 7,
-    "line": "PE",
-    "transitions": {
-      "exit": 2 
-    }
-  }
 ]

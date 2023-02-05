@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "http://yourdomain.com/schemas/station.json",
   "type": "array",
   "items": {
@@ -11,32 +11,44 @@
         "minimum": 0
       },
       "line": { "type": "string" },
-      "transitions": {
+      "exits": {
         "type": "array",
         "items": {
-          "patternProperties": {
-            "^([A-Z]{2}|EXIT)$": {
+          "type": "integer",
+          "minItems": 1
+        }
+      },
+      "transitions": {
+        "type": "array",
+        "minItems": 0,
+        "items": {
+          "type": "object",
+          "properties": {
+            "to": {
+              "anyOf": [
+                { "type": "string" },
+                {
+                  "type": "string",
+                  "pattern": "^([A-Z]{2})$"
+                }
+              ]
+            },
+            "exits": {
               "type": "array",
               "items": {
                 "type": "integer"
               }
             }
           },
-          "properties": {
-            "exit": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "minLength": 1
-              }
-            }
+          "dependentRequired": {
+            "to": ["exits"],
+            "exits": ["to"]
           },
-          "additionalProperties": true
-        },
-      "additionalProperties": false
+          "additionalProperties": false
+        }
       }
     },
-    "required": ["name", "id", "line", "transitions"],
+    "required": ["name", "id", "line", "exits"],
     "additionalProperties": false
   }
 }

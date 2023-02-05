@@ -1,126 +1,236 @@
 [
-  {
-    "name": "Punggol",
-    "id": 17,
-    "line": "NE",
-    "transitions": {
-      "exit": 5,
-      "PE": 14,
-      "PW": 14
+    {
+        "name": "Punggol",
+        "id": 17,
+        "line": "NE",
+        "exits": [
+            5, 14, 23
+        ],
+        "transitions": [
+            {
+                "to": "PE",
+                "exits": [
+                    23
+                ]
+            },
+            {
+                "to": "PW",
+                "exits": [
+                    23
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Seng Kang",
+        "id": 16,
+        "line": "NE",
+        "exits": [
+            5, 14, 18
+        ],
+        "transitions": [
+            {
+                "to": "SW",
+                "exits": [
+                    18
+                ]
+            },
+            {
+                "to": "SE",
+                "exits": [
+                    18
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Buangkok",
+        "id": 15,
+        "line": "NE",
+        "exits": [
+            9, 16
+        ]
+    },
+    {
+        "name": "Hougang",
+        "id": 14,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ],
+        "transitions": [
+            {
+                "to": "Hougang Mall",
+                "exits": [
+                    8
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kovan",
+        "id": 13,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ],
+        "transitions": [
+            {
+                "to": "Heartland Mall",
+                "exits": [
+                    8
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Serangoon",
+        "id": 12,
+        "line": "NE",
+        "exits": [
+            6, 16
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    16
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Woodleigh",
+        "id": 11,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ]
+    },
+    {
+        "name": "Potong Pasir",
+        "id": 10,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ]
+    },
+    {
+        "name": "Boon Keng",
+        "id": 9,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ]
+    },
+    {
+        "name": "Farrer Park",
+        "id": 8,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ],
+        "transitions": [
+            {
+                "to": "City Sqaure Mall",
+                "exits": [
+                    8
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Little India",
+        "id": 7,
+        "line": "NE",
+        "exits": [
+            8, 17
+        ],
+        "transitions": [
+            {
+                "to": "DT",
+                "exits": [
+                    17
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dhoby Ghaut",
+        "id": 6,
+        "line": "NE",
+        "exits": [
+            9, 13, 18
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    9, 13, 18
+                ]
+            },
+            {
+                "to": "NS",
+                "exits": [
+                    9, 13, 18
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Clarke Quay",
+        "id": 5,
+        "line": "NE",
+        "exits": [
+            4, 11, 14, 21
+        ]
+    },
+    {
+        "name": "Chinatown",
+        "id": 4,
+        "line": "NE",
+        "exits": [
+            2, 12, 19
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    1
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Outram Park",
+        "id": 3,
+        "line": "NE",
+        "exits": [
+            12, 15
+        ],
+        "transitions": [
+            {
+                "to": "EW",
+                "exits": [
+                    6
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Harbourfront",
+        "id": 1,
+        "line": "NE",
+        "exits": [
+            9, 19
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    9, 19
+                ]
+            }
+        ]
     }
-  }, {
-    "name": "Seng Kang",
-    "id": 16,
-    "line": "NE",
-    "transitions": {
-      "exit": 5,
-      "SW": 14,
-      "SE": 14
-    }
-  }, {
-    "name": "Buangkok",
-    "id": 15,
-    "line": "NE",
-    "transitions": {
-      "exit": 9
-    }
-  }, {
-    "name": "Hougang",
-    "id": 14,
-    "line": "NE",
-    "transitions": {
-      "exit": 8
-    }
-  }, {
-    "name": "Kovan",
-    "id": 13,
-    "line": "NE",
-    "transitions": {
-      "exit": 8
-    }
-  }, {
-    "name": "Serangoon",
-    "id": 12,
-    "line": "NE",
-    "transitions": {
-      "exit": 6,
-      "CC": 16
-    }
-  }, {
-    "name": "Woodleigh",
-    "id": 11,
-    "line": "NE",
-    "transitions": {
-      "exit": 8
-    }
-  }, {
-    "name": "Potong Pasir",
-    "id": 10,
-    "line": "NE",
-    "transitions": {
-      "exit": 8
-    }
-  }, {
-    "name": "Boon Keng",
-    "id": 9,
-    "line": "NE",
-    "transitions": {
-      "exit": 8
-    }
-  }, {
-    "name": "Farrer Park",
-    "id": 8,
-    "line": "NE",
-    "transitions": {
-      "exit": 8
-    }
-  }, {
-    "name": "Little India",
-    "id": 7,
-    "line": "NE",
-    "transitions": {
-      "exit": 8,
-      "DT": 17
-    }
-  }, {
-    "name": "Dhoby Ghaut",
-    "id": 6,
-    "line": "NE",
-    "transitions": {
-      "exit": 9,
-      "CC": 9,
-      "NS": 9
-    }
-  }, {
-    "name": "Clarke Quay",
-    "id": 5,
-    "line": "NE",
-    "transitions": {
-      "exit": 4
-    }
-  }, {
-    "name": "Chinatown",
-    "id": 4,
-    "line": "NE",
-    "transitions": {
-      "exit": 2,
-      "CC": 1
-    }
-  }, {
-    "name": "Outram Park",
-    "id": 3,
-    "line": "NE",
-    "transitions": {
-      "exit": 12,
-      "EW": 6
-    }
-  }, {
-    "name": "Harbourfront",
-    "id": 1,
-    "line": "NE",
-    "transitions": {
-      "exit": 9,
-      "CC": 9
-    }
-  }
 ]

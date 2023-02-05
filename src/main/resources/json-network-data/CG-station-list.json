@@ -1,26 +1,55 @@
 [
-  {
-    "name": "Tanah Merah",
-    "id": 0,
-    "line": "CG",
-    "transitions": {
-      "exit": 7,
-      "EW": 7
+    {
+        "name": "Tanah Merah",
+        "id": 0,
+        "line": "CG",
+        "exits": [
+            7, 18
+        ],
+        "transitions": [
+            {
+                "to": "EW",
+                "exits": [
+                    7, 18
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Expo",
+        "id": 1,
+        "line": "CG",
+        "exits": [
+            5, 13, 21
+        ],
+        "transitions": [
+            {
+                "to": "DT",
+                "exits": [
+                    13
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Changi Airport",
+        "id": 2,
+        "line": "CG",
+        "exits": [
+            5, 20
+        ],
+        "transitions": [
+            {
+                "to": "T1, T3, T4, Jewel",
+                "exits": [
+                    20
+                ]
+            },{
+                "to": "T2",
+                "exits": [
+                    5
+                ]
+            }
+        ]
     }
-  },{
-    "name": "Expo",
-    "id": 1,
-    "line": "CG",
-    "transitions": {
-      "exit": 5,
-      "DT": 13
-    }
-  },{
-    "name": "Changi Airport",
-    "id": 2,
-    "line": "CG",
-    "transitions": {
-      "exit": 20
-    }
-  }
 ]

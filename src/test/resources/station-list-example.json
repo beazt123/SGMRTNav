@@ -1,11 +1,80 @@
 [
   {
-    "name": "Serangoon",
-    "id": 12,
-    "line": "NE",
-    "transitions": {
-      "EXIT": 9,
-      "CCL": 9
+    "name": "Choa Chu Kang",
+    "id": 1,
+    "line": "BP",
+    "exits": [2],
+    "transitions": [
+      {
+        "to": "NS",
+        "exits": [2]
+      }
+    ]
+  },{
+  "name": "South View",
+  "id": 2,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Keat Hong",
+  "id": 3,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Teck Whye",
+  "id": 4,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Phoenix",
+  "id": 5,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Bukit Panjang",
+  "id": 6,
+  "line": "BP",
+  "exits": [2],
+  "transitions": [
+    {
+      "to": "DT",
+      "exits": [2]
     }
-  }
+  ]
+},{
+  "name": "Petir",
+  "id": 7,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Pending",
+  "id": 8,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Bangkit",
+  "id": 9,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Fajar",
+  "id": 10,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Segar",
+  "id": 11,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Jelapang",
+  "id": 12,
+  "line": "BP",
+  "exits": [2]
+},{
+  "name": "Senja",
+  "id": 13,
+  "line": "BP",
+  "exits": [2]
+}
 ]

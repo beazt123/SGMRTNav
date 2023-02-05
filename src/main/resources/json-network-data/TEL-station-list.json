@@ -1,68 +1,90 @@
 [
-  {
-    "name": "Woodlands North",
-    "id": 1,
-    "line": "TE",
-    "transitions": {
-      "exit": 1
+    {
+        "name": "Woodlands North",
+        "id": 1,
+        "line": "TE",
+        "exits": [
+            1, 12, 20
+        ]
+    },
+    {
+        "name": "Woodlands",
+        "id": 2,
+        "line": "TE",
+        "exits": [
+            4, 9, 17
+        ],
+        "transitions": [
+            {
+                "to": "NS",
+                "exits": [
+                    17
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Woodlands South",
+        "id": 3,
+        "line": "TE",
+        "exits": [
+            8, 13
+        ]
+    },
+    {
+        "name": "Springleaf",
+        "id": 4,
+        "line": "TE",
+        "exits": [
+            8, 12
+        ]
+    },
+    {
+        "name": "Lentor",
+        "id": 5,
+        "line": "TE",
+        "exits": [
+            8, 12
+        ]
+    },
+    {
+        "name": "Mayflower",
+        "id": 6,
+        "line": "TE",
+        "exits": [
+            5, 16
+        ]
+    },
+    {
+        "name": "Bright Hill",
+        "id": 7,
+        "line": "TE",
+        "exits": [
+            9, 13, 20
+        ]
+    },
+    {
+        "name": "Upper Thompson",
+        "id": 8,
+        "line": "TE",
+        "exits": [
+            8, 12
+        ]
+    },
+    {
+        "name": "Caldecott",
+        "id": 9,
+        "line": "TE",
+        "exits": [
+            2, 19
+        ],
+        "transitions": [
+            {
+                "to": "CC",
+                "exits": [
+                    19
+                ]
+            }
+        ]
     }
-  },{
-    "name": "Woodlands",
-    "id": 2,
-    "line": "TE",
-    "transitions": {
-      "exit": 4,
-      "NS": 17
-    }
-  },{
-    "name": "Woodlands South",
-    "id": 3,
-    "line": "TE",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Springleaf",
-    "id": 4,
-    "line": "TE",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Lentor",
-    "id": 5,
-    "line": "TE",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Mayflower",
-    "id": 6,
-    "line": "TE",
-    "transitions": {
-      "exit": 5
-    }
-  },{
-    "name": "Bright Hill",
-    "id": 7,
-    "line": "TE",
-    "transitions": {
-      "exit": 9
-    }
-  },{
-    "name": "Upper Thompson",
-    "id": 8,
-    "line": "TE",
-    "transitions": {
-      "exit": 8
-    }
-  },{
-    "name": "Caldecott",
-    "id": 9,
-    "line": "TE",
-    "transitions": {
-      "exit": 2,
-      "CC": 19
-    }
-  }
 ]
