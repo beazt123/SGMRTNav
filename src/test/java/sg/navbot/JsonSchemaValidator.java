@@ -22,17 +22,17 @@ public class JsonSchemaValidator {
     @Test
     public void prepareSchemaFromFactory() throws IOException {
         Path fileName
-                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\SGMRTNav\\docs\\station-list-schema.json");
+                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\Java-Telegram-Bot\\SGMRTNav\\docs\\station-list-schema.json");
         String str = Files.readString(fileName);
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
         System.out.println(factory.getSchema(str));
     }
     @Test
     public void validateJson() throws IOException {
         Path schemaFileName
-                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\SGMRTNav\\docs\\station-list-schema.json");
+                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\Java-Telegram-Bot\\SGMRTNav\\docs\\station-list-schema.json");
         Path jsonFileName
-                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\SGMRTNav\\docs\\example.json");
+                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\Java-Telegram-Bot\\SGMRTNav\\docs\\station-list-example.json");
         String str = Files.readString(schemaFileName);
         JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
         JsonSchema schema = factory.getSchema(str);
