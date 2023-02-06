@@ -16,6 +16,8 @@ public class Main {
     public static void main(String[] args) {
         DB db = DBMaker.memoryDB().make();
         DBContext dbContext = new MapDBContext(db);
+        String botToken = System.getenv("BOT_TOKEN");
+        String botUsername = System.getenv("BOT_USERNAME");
 
         try {
             // Create the TelegramBotsApi object to register your bots
@@ -24,8 +26,8 @@ public class Main {
             // Register your newly created AbilityBot
             botsApi.registerBot(
                     new Bot(
-                            "5717442648:AAENNqywx5otthqRUSNQi4iRtynLuMlk4NE",
-                            "NavBuddyBot",
+                            botToken,
+                            botUsername,
                             dbContext)
             );
         } catch (TelegramApiException e) {
