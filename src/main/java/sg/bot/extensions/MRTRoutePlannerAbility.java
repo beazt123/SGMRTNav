@@ -44,7 +44,8 @@ public class MRTRoutePlannerAbility implements AbilityExtension {
         fuzzy string matching to select 2 stations. Return a list of strings and send it back to the client
          */
         Station[] selectedStations = {null};
-        final String askForStation = "Hi! Which station do you wanna go?";
+        final String askForDestinationStation = "Hi! Which station do you wanna go?";
+        final String askForStartingStation = "Ok. From which station?";
         return Ability.builder()
                 .name("go")
                 .info("Plans an MRT route, telling you which door to alight for maximum travel efficiency")
@@ -52,7 +53,7 @@ public class MRTRoutePlannerAbility implements AbilityExtension {
                 .privacy(PUBLIC)
                 .locality(ALL)
                 .action(ctx -> {
-                    extensionUser.silent().forceReply(askForStation, ctx.chatId());
+                    extensionUser.silent().forceReply(askForDestinationStation, ctx.chatId());
                 })
                 .reply(ReplyFlow.builder(this.extensionUser.db(),1)
                         .action((bot, upd) -> {
@@ -63,9 +64,10 @@ public class MRTRoutePlannerAbility implements AbilityExtension {
                             );
                             System.out.println("User selected :" + s1);
                             selectedStations[0] = s1;
-                            extensionUser.silent().forceReply("Ok. From which station?", getChatId(upd));
+                            extensionUser.silent().send("Noted. " + s1.getName() + " it is.", getChatId(upd));
+                            extensionUser.silent().forceReply(askForStartingStation, getChatId(upd));
                         })
-                        .onlyIf(isReplyToMessage(askForStation))
+                        .onlyIf(isReplyToMessage(askForDestinationStation))
                         .next(
                                 Reply.of(
                                         (bot, upd) -> {
@@ -76,7 +78,8 @@ public class MRTRoutePlannerAbility implements AbilityExtension {
                                             extensionUser.silent().send(msg, upd.getMessage().getChatId());
                                         },
                                         MESSAGE,
-                                        REPLY
+                                        REPLY,
+                                        isReplyToMessage(askForStartingStation)
                                 )
                         )
                         .build()
