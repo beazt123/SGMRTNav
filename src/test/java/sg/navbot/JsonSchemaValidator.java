@@ -20,21 +20,21 @@ import java.util.Set;
 public class JsonSchemaValidator {
     private ObjectMapper mapper = new ObjectMapper();
     @Test
-    public void prepareSchemaFromFactory() throws IOException {
+    public void prepareSchemaFromFactory() throws URISyntaxException, IOException {
         Path fileName
-                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\Java-Telegram-Bot\\SGMRTNav\\docs\\station-list-schema.json");
+                = Path.of(JsonSchemaValidator.class.getResource("/station-list-schema.json").toURI());
         String str = Files.readString(fileName);
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         System.out.println(factory.getSchema(str));
     }
     @Test
-    public void validateJson() throws IOException {
+    public void validateJson() throws IOException, URISyntaxException {
         Path schemaFileName
-                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\Java-Telegram-Bot\\SGMRTNav\\docs\\station-list-schema.json");
+                = Path.of(JsonSchemaValidator.class.getResource("/station-list-schema.json").toURI());
         Path jsonFileName
-                = Path.of("D:\\Desktop\\External-Commitments\\Projects\\Java-Telegram-Bot\\SGMRTNav\\docs\\station-list-example.json");
+                = Path.of(JsonSchemaValidator.class.getResource("/station-list-example.json").toURI());
         String str = Files.readString(schemaFileName);
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         JsonSchema schema = factory.getSchema(str);
         schema.initializeValidators();
 
@@ -43,12 +43,6 @@ public class JsonSchemaValidator {
         Set<ValidationMessage> errors = schema.validate(jsonObj);
 
 
-    }
-
-    @Test
-    public void t() {
-        URL l = this.getClass().getResource("/la");
-        System.out.println(l.toString());
     }
 
 }
