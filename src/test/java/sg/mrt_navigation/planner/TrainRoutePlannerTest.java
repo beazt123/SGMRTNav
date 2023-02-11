@@ -135,8 +135,8 @@ public class TrainRoutePlannerTest {
         File transitionsFile;
         File jsonDataFolder;
         try {
-            transitionsFile = new File(JSONMRTNetworkBuilder.class.getResource("/wrongly-mapped-stations/transitions.json").toURI());
-            jsonDataFolder = new File(JSONMRTNetworkBuilder.class.getResource("/wrongly-mapped-stations").toURI());
+            transitionsFile = new File(JSONMRTNetworkBuilder.class.getResource("/json-network-data/transitions.json").toURI());
+            jsonDataFolder = new File(JSONMRTNetworkBuilder.class.getResource("/json-network-data").toURI());
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
