@@ -194,7 +194,7 @@
         ],
         "transitions": [
             {
-                "to": "CC",
+                "to": "DT",
                 "exits": [
                     1
                 ]
