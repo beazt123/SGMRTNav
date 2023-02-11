@@ -4,7 +4,6 @@ package sg.bot;
 import org.telegram.abilitybots.api.bot.AbilityWebhookBot;
 import org.telegram.abilitybots.api.db.DBContext;
 import org.telegram.abilitybots.api.objects.Ability;
-import org.telegram.abilitybots.api.objects.Locality;
 import org.telegram.abilitybots.api.util.AbilityExtension;
 import sg.bot.extensions.MRTRoutePlannerAbility;
 
