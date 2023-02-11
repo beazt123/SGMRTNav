@@ -1,15 +1,23 @@
 package sg.mrt_navigation.planner;
 
+import org.jetbrains.annotations.NotNull;
 import org.jgrapht.graph.DefaultEdge;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import sg.mrt_navigation.JSONMRTNetworkBuilder;
 import sg.mrt_navigation.domain.Line;
 import sg.mrt_navigation.domain.Station;
+
 import sg.mrt_navigation.domain.Stations;
 import sg.mrt_navigation.network.Network;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TrainRoutePlannerTest {
 
@@ -97,4 +105,66 @@ public class TrainRoutePlannerTest {
                 .stream()
                 .forEach(System.out::println);
     }
+
+    @Test
+    public void testAllPossibleCombinations() throws URISyntaxException {
+        /*
+        This test case tests for error if Outram park was mapped to Ang Mo Kio in SG MRT Map
+         */
+        TrainRoutePlanner planner = new TrainRoutePlanner(buildTrainNetwork());
+
+        List<Station> stations = Stations.getAllStations();
+        List<int[]> journeys = generate(stations.size(), 2);
+        for (int[] journey : journeys) {
+            int startingStationIdx = journey[0];
+            int endingStationIdx = journey[1];
+            Station startingStation = stations.get(startingStationIdx);
+            Station endingStation = stations.get(endingStationIdx);
+            List<Station> route = planner.getRoute(startingStation, endingStation);
+            assertEquals(route.get(0), startingStation);
+            assertEquals(route.get(route.size() - 1), endingStation);
+
+        }
+
+
+
+    }
+
+    @NotNull
+    public static Network<Station, DefaultEdge> buildTrainNetwork() {
+        File transitionsFile;
+        File jsonDataFolder;
+        try {
+            transitionsFile = new File(JSONMRTNetworkBuilder.class.getResource("/wrongly-mapped-stations/transitions.json").toURI());
+            jsonDataFolder = new File(JSONMRTNetworkBuilder.class.getResource("/wrongly-mapped-stations").toURI());
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        Set<File> stationsListFiles = Stream.of(jsonDataFolder.listFiles())
+                .filter(file -> !(file.isDirectory() || file.getName().equals("transitions.json")) )
+                .map(File::getAbsoluteFile)
+                .collect(Collectors.toSet());
+        return new JSONMRTNetworkBuilder(stationsListFiles, transitionsFile).build();
+
+
+    }
+
+    public static List<int[]> generate(int n, int r) {
+        List<int[]> combinations = new ArrayList<>();
+        helper(combinations, new int[r], 0, n-1, 0);
+        return combinations;
+    }
+
+    public static void helper(List<int[]> combinations, int data[], int start, int end, int index) {
+        if (index == data.length) {
+            int[] combination = data.clone();
+            combinations.add(combination);
+        } else if (start <= end) {
+            data[index] = start;
+            helper(combinations, data, start + 1, end, index + 1);
+            helper(combinations, data, start + 1, end, index);
+        }
+    }
+
+
 }
