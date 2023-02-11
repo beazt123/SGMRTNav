@@ -1,25 +1,26 @@
 package sg.bot.extensions;
 
+import org.jgrapht.graph.DefaultEdge;
 import org.telegram.abilitybots.api.bot.BaseAbilityBot;
 import org.telegram.abilitybots.api.objects.Ability;
-import org.telegram.abilitybots.api.objects.Privacy;
 import org.telegram.abilitybots.api.objects.Reply;
 import org.telegram.abilitybots.api.objects.ReplyFlow;
 import org.telegram.abilitybots.api.util.AbilityExtension;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import sg.mrt_navigation.JSONMRTNetworkBuilder;
 import sg.mrt_navigation.domain.Line;
 import sg.mrt_navigation.domain.Station;
 import sg.mrt_navigation.domain.Stations;
-import sg.mrt_navigation.planner.MRTNetwork;
+import sg.mrt_navigation.network.Network;
 import sg.mrt_navigation.planner.TrainRoutePlanner;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.telegram.abilitybots.api.objects.Flag.MESSAGE;
 import static org.telegram.abilitybots.api.objects.Flag.REPLY;
@@ -30,12 +31,35 @@ import static sg.utils.UserInputProcessing.*;
 
 public class MRTRoutePlannerAbility implements AbilityExtension {
     private BaseAbilityBot extensionUser;
-    private static final TrainRoutePlanner planner = new TrainRoutePlanner(MRTNetwork.mrtNetwork);
+    private static TrainRoutePlanner planner;
+
+    static {
+        File transitionsFile;
+        File jsonDataFolder;
+        try {
+            transitionsFile = new File(JSONMRTNetworkBuilder.class.getResource("/json-network-data/transitions.json").toURI());
+            jsonDataFolder = new File(JSONMRTNetworkBuilder.class.getResource("/json-network-data").toURI());
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        Set<File> stationsListFiles = Stream.of(jsonDataFolder.listFiles())
+                .filter(file -> !(file.isDirectory() || file.getName().equals("transitions.json")) )
+                .map(File::getAbsoluteFile)
+                .collect(Collectors.toSet());
+        planner = new TrainRoutePlanner(
+                new JSONMRTNetworkBuilder(stationsListFiles, transitionsFile).build()
+        );
+
+    }
     private static final List<String> stations = Stations.getAllStations()
                                                         .stream()
                                                         .map(s -> s.toString())
                                                         .collect(Collectors.toList());
 
+
+    public void setNetwork(Network<Station, DefaultEdge> network) {
+
+    }
 
     public MRTRoutePlannerAbility(BaseAbilityBot extensionUser) { this.extensionUser = extensionUser; }
 

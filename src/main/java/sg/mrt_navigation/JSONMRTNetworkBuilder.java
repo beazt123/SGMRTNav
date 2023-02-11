@@ -1,4 +1,4 @@
-package sg.mrt_navigation.planner;
+package sg.mrt_navigation;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,11 +9,11 @@ import sg.mrt_navigation.domain.Station;
 import sg.mrt_navigation.domain.Stations;
 import sg.mrt_navigation.network.Network;
 import sg.mrt_navigation.network.NetworkBuilder;
+import sg.utils.JSONValidator;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -21,60 +21,69 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class JSONMRTNetworkBuilder implements NetworkBuilder<Station, DefaultEdge> {
-    private JSONValidator stationsListJSONvalidator;
-    private JSONValidator transitionsJSONvalidator;
-    private URL jsonDataFolder;
+    private static JSONValidator stationsListJSONvalidator;
+    private static JSONValidator transitionsJSONvalidator;
+    private JsonNode transitionsList;
 
-    public JSONMRTNetworkBuilder() {
-        this(JSONMRTNetworkBuilder.class.getResource("/json-network-data"),
-            JSONMRTNetworkBuilder.class.getResource("/json-schemas/transitions-schema.json"),
-            JSONMRTNetworkBuilder.class.getResource("/json-schemas/station-list-schema.json"));
-
-    }
-
-    public JSONMRTNetworkBuilder(URL jsonDataFolder,
-                                 URL transitionsJsonSchema,
-                                 URL stationsListJsonSchema) {
-        this.jsonDataFolder = jsonDataFolder;
+    static {
         try {
-            this.stationsListJSONvalidator = new JSONValidator(stationsListJsonSchema.toURI());
-            this.transitionsJSONvalidator = new JSONValidator(transitionsJsonSchema.toURI());
+            stationsListJSONvalidator = new JSONValidator(JSONMRTNetworkBuilder.class.getResource("/json-schemas/station-list-schema.json").toURI());
+            transitionsJSONvalidator = new JSONValidator(JSONMRTNetworkBuilder.class.getResource("/json-schemas/transitions-schema.json").toURI());
         } catch (URISyntaxException e) {
-            throw new IllegalArgumentException(e.getMessage());
+            // Will not happen during runtime as the developer configures the class
         }
     }
 
-    private void parseStationsList() {
+    public JSONMRTNetworkBuilder(Set<File> stationsListFiles, File transitionsFile) {
+        parseJsonFilesAndFlyweightStations(stationsListFiles);
+        transitionsList = parseTransitionsList(transitionsFile);
+    }
+    public JSONMRTNetworkBuilder() {
+        File jsonDataFolder = null;
+        File transitionsFile = null;
         try {
-            Set<File> listFiles = Stream.of(new File(jsonDataFolder.toURI()).listFiles())
-                    .filter(file -> !(file.isDirectory() || file.getName().equals("transitions.json")) )
-                    .map(File::getAbsoluteFile)
-                    .collect(Collectors.toSet());
-
-            for (File path : listFiles) {
-                try {
-                    parseFileAndCollectStations(path);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            jsonDataFolder = new File(JSONMRTNetworkBuilder.class.getResource("/json-network-data").toURI());
+            transitionsFile = new File(JSONMRTNetworkBuilder.class.getResource("/json-network-data/transitions.json").toURI());
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            // Won't happen since the developer configures this class
+        }
+        Set<File> stationsListFiles = Stream.of(jsonDataFolder.listFiles())
+                .filter(file -> !(file.isDirectory() || file.getName().equals("transitions.json")) )
+                .map(File::getAbsoluteFile)
+                .collect(Collectors.toSet());
+
+        parseJsonFilesAndFlyweightStations(stationsListFiles);
+        transitionsList = parseTransitionsList(transitionsFile);
+    }
+
+    private void parseJsonFilesAndFlyweightStations(Set<File> listFiles) {
+        for (File path : listFiles) {
+            try {
+                parseFileAndCollectStations(path);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     private void parseFileAndCollectStations(File path) throws IOException {
         JsonNode jsonObj = parseFileIntoJson(path);
-        if (!stationsListJSONvalidator.isValidJson(jsonObj)) {
-            throw new IllegalStateException("JSON data could have been outdated: " + path.toString());
+        JSONValidator.Result result = stationsListJSONvalidator.checkForValidity(jsonObj);
+        if (!result.isValid()) {
+            throw new IllegalStateException("JSON data structure in File\n\t"
+                    + path.toString() + "\n"
+                    + "does not match specifications at\n\t"
+                    + result.getSchemaPath() +"\n"
+                    + "Details:\n"
+                    + result.getMsgs());
         }
         // actually making it into part of the network
         for (JsonNode station : jsonObj) {
-            deserialiseToStation(station);
+            deserializeToStation(station);
         }
     }
 
-    private static void deserialiseToStation(JsonNode station) {
+    private static void deserializeToStation(JsonNode station) {
         String stationName = station.get("name").asText();
         int stationId = station.get("id").asInt();
         Line stationLine = Line.valueOf(station.get("line").asText());
@@ -110,18 +119,17 @@ public class JSONMRTNetworkBuilder implements NetworkBuilder<Station, DefaultEdg
         return JSONValidator.parse(jsonData);
     }
 
-    private JsonNode parseTransitionsList(URL transitionsURL) {
+    private JsonNode parseTransitionsList(File transitionsList) {
         String jsonData = null;
         try {
-            jsonData = Files.readString(Path.of(transitionsURL.toURI()));
+            jsonData = Files.readString(Path.of(transitionsList.toURI()));
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         JsonNode jsonObj = JSONValidator.parse(jsonData);
-        if (!transitionsJSONvalidator.isValidJson(jsonObj)) {
-            throw new IllegalStateException("Transition JSON data could have been outdated");
+        JSONValidator.Result result = transitionsJSONvalidator.checkForValidity(jsonObj);
+        if (!result.isValid()) {
+            throw new IllegalStateException("Transition JSON data does not match the specs: " + result.getMsgs().toString());
         } else {
             return jsonObj;
         }
@@ -156,8 +164,6 @@ public class JSONMRTNetworkBuilder implements NetworkBuilder<Station, DefaultEdg
 
     @Override
     public Network<Station, DefaultEdge> build() {
-        parseStationsList();
-        JsonNode transitionsList = parseTransitionsList(JSONMRTNetworkBuilder.class.getResource("/json-network-data/transitions.json"));
 
         Network<Station, DefaultEdge> mrtNetwork = new Network<>();
         mrtNetwork.setGraph(new DefaultUndirectedWeightedGraph<>(DefaultEdge.class));
