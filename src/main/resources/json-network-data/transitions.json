@@ -42,7 +42,7 @@
     "stations": ["NS:9", "TE:2"],
     "walking_time": 2
   },{
-    "stations": ["BP:6", "TE:1"],
+    "stations": ["BP:6", "DT:1"],
     "walking_time": 3
   },{
     "stations": ["NS:21", "DT:11"],
